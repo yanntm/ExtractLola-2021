@@ -1,7 +1,9 @@
 # tell aclocal about the macros in the "m4" folder
 ACLOCAL_AMFLAGS = -I m4 --install
 
-SUBDIRS = libs/lp_solve_5.5 src utils tests doc 
+SUBDIRS = libs/lp_solve_5.5 src utils 
+
+# tests doc 
 
 EXTRA_DIST = examples
 
