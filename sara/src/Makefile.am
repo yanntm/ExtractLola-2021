@@ -9,6 +9,9 @@ sara_CPPFLAGS = -I$(top_srcdir)/libs
 # add -DSARALIB (above) for compiling a library
 sara_LDADD = $(top_builddir)/libs/lp_solve_5.5/liblpsolve55.la
 
+sara_LDFLAGS = $(LDFLAGS) -all-static -static-libgcc -static-libstdc++
+
+
 # only add the local Petri net API if necessary
 if COMPILE_PNAPI
 sara_LDADD += $(top_builddir)/libs/pnapi/libpnapi.a -lpthread
