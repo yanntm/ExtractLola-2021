@@ -178,9 +178,9 @@ AC_CHECK_FUNC(setsockopt, , AC_CHECK_LIB(socket, setsockopt))
 
 # write files
 AC_CONFIG_FILES([
-	Makefile libs/lp_solve_5.5/Makefile src/Makefile utils/Makefile doc/Doxyfile doc/Doxydetails doc/Makefile
-  tests/Makefile tests/package.m4])
-AC_CONFIG_FILES([tests/cover.sh], [chmod +x tests/cover.sh])
+	Makefile libs/lp_solve_5.5/Makefile src/Makefile utils/Makefile ])
+
+# AC_CONFIG_FILES([tests/cover.sh], [chmod +x tests/cover.sh])
 AC_OUTPUT
 
 echo ""
