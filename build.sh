@@ -8,6 +8,14 @@ mkdir -p usr/local/share/man/man1/
 
 export INSTALL_DIR=$(pwd)/usr/local/
 
+export PATH=$PWD/usr/local/bin/:$PATH
+
+# kimwitu dependency
+cd kimwitu++-2.3.13/
+./configure --prefix=$INSTALL_DIR
+make && make install
+cd ..
+
 
 
 cd lola2
@@ -17,11 +25,6 @@ make
 make install
 cd ..
 
-# kimwitu dependency
-#cd kimwitu++-2.3.13/
-#./configure --prefix=$INSTALL_DIR
-#make && make install
-# cd ..
  
 cd sara/
 ./configure --prefix=$INSTALL_DIR
