@@ -14,8 +14,6 @@ jobs:
     - uses: actions/checkout@v3
     - name: Install packages
       run: sudo apt-get clean ; sudo apt-get update ; sudo apt-get install gengetopt flex bison g++
-    - name: tag version date
-      run: ./tag.sh
     - name: build 
       run: ./build.sh
     - name: list built files
