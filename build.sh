@@ -11,6 +11,7 @@ export INSTALL_DIR=$(pwd)/usr/local/
 export PATH=$PWD/usr/local/bin/:$PATH
 
 # kimwitu dependency
+tar xvzf kimwitu++-2.3.13
 cd kimwitu++-2.3.13/
 ./configure --prefix=$INSTALL_DIR
 make && make install
