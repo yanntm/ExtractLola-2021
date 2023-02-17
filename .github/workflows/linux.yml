@@ -1,0 +1,29 @@
+name: Linux Build
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install packages
+      run: sudo apt-get clean ; sudo apt-get update ; sudo apt-get install gengetopt kimwitu++ flex bison g++
+    - name: tag version date
+      run: ./tag.sh
+    - name: build 
+      run: ./build.sh
+    - name: list built files
+      run: ls -lah website/
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4.4.1
+      with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: website/ # The folder the action should deploy.
+          clean: true # Automatically remove deleted files from the deploy branch 
+          single-commit: true
