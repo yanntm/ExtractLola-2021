@@ -65,7 +65,7 @@ std::ostream & operator<<(std::ostream & os, const PetriNet & net)
  * The format of the stream data is not determined automatically.
  * You have to set it explicitly using a stream manipulator from pnapi::io.
  */
-std::istream & operator>>(std::istream & is, PetriNet & net) throw (exception::InputError)
+std::istream & operator>>(std::istream & is, PetriNet & net) /*throw (exception::InputError)*/
 {
   switch (util::FormatData::data(is))
   {

@@ -1325,7 +1325,7 @@ std::map<Transition *, std::string> PetriNet::normalize()
  * \pre   Interface of 'net' is empty.
  */
 void PetriNet::produce(const PetriNet & net, const std::string & aPrefix,
-                       const std::string & aNetPrefix) throw (exception::InputError)
+                       const std::string & aNetPrefix) /* throw (exception::InputError)*/
 {
   PNAPI_ASSERT(!aPrefix.empty());
   PNAPI_ASSERT(!aNetPrefix.empty());
@@ -1410,7 +1410,7 @@ void PetriNet::setConstraintLabels(const std::map<Transition *, std::set<std::st
  * \brief translates constraint labels to transitions
  */
 std::map<Transition *, std::set<Transition *> >
-PetriNet::translateConstraintLabels(const PetriNet & net) throw (exception::InputError)
+PetriNet::translateConstraintLabels(const PetriNet & net) /* throw (exception::InputError)*/
 {
   map<Transition *, set<string> > labels = net.constraints_;
   map<Transition *, set<Transition *> > result;
@@ -2021,7 +2021,7 @@ vector<set<Node *> > PetriNet::getConflictClusters() const
  */
 extern "C" {
   char libpnapi_is_present() {
-      pnapi::PetriNet a();
+      pnapi::PetriNet a;
       return 0;
   }
 }
