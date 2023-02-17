@@ -1,0 +1,15 @@
+pnml
+xml
+threads=4
+timelimit=91800
+skeleton
+compare
+encoder=simplecompressed
+memorylimit=16G
+mcc
+stateequation=par
+findpath=par
+tokenquickcheck=shift
+siphondepth=10
+quickchecks
+
