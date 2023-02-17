@@ -220,10 +220,10 @@ lola_SOURCES = $(KCSOURCES)                                           \
                Planning/ComputeBoundSearchTask.cc                           \
                Planning/ComputeBoundSearchTask.h                            \             
                Planning/ComputeBoundFindpathTask.cc                           \
-               Planning/ComputeBoundFindpathTask.h                            \             
+               Planning/ComputeBoundFindpathTask.h                            \
                Planning/ComputeBoundStateEquationTask.cc                           \
-               Planning/ComputeBoundStateEquationTask.h                            \             
-               Planning/ComputeBoundTask.h                            \             
+               Planning/ComputeBoundStateEquationTask.h                            \
+               Planning/ComputeBoundTask.h                            \
                Planning/LTLTask.h                                     \
                Planning/AFTask.h                                      \
                Planning/AGAFTask.h                                    \
@@ -373,6 +373,8 @@ lola_SOURCES = $(KCSOURCES)                                           \
 	ThirdParty/minisat/ThirdParty/zlib/zlib.h
 
 lola_LDADD = $(top_builddir)/libs/lp_solve_5.5/liblpsolve55.la
+lola_LDFLAGS = $(LDFLAGS) -all-static -static-libgcc -static-libstdc++
+
 
 #############################################################################
 # EVERYTHING BELOW THIS LINE IS GENERIC - YOU MUST NOT CHANGE ANYTHING BELOW
