@@ -105,7 +105,7 @@ class PetriNet
   /// needs to update internal structures
   friend class util::ComponentObserver;
   /// Petri net input, see pnapi::io
-  friend std::istream & io::operator>>(std::istream &, PetriNet &) throw (exception::InputError);
+  friend std::istream & io::operator>>(std::istream &, PetriNet &) /* throw (exception::InputError)*/ ;
   /// Petri net output, see pnapi::io
   friend std::ostream & io::__dot::output(std::ostream &, const PetriNet &);
   /// Petri net output, see pnapi::io
@@ -454,7 +454,7 @@ public: /* public methods */
   unsigned int reduce(unsigned int = LEVEL_5);
   /// product with Constraint oWFN
   void produce(const PetriNet &, const std::string & = "net",
-               const std::string & = "constraint") throw (exception::InputError);
+               const std::string & = "constraint") /* throw (exception::InputError)*/ ;
   /// adds a prefix to all labels and nodes
   PetriNet & prefixNames(const std::string &);
   /// adds a prefix to all labels
@@ -508,7 +508,7 @@ private: /* private methods */
                                  const std::string & = "") const;
   /// translates constraint labels to transitions
   std::map<Transition *, std::set<Transition *> >
-  translateConstraintLabels(const PetriNet &) throw (exception::InputError);
+  translateConstraintLabels(const PetriNet &) /* throw (exception::InputError) */ ;
   /// compose constructor
   PetriNet(const Interface &, const Interface &, std::map<Label *, Label *> &,
            std::map<Label *, Place *> &, std::set<Label *> &);
