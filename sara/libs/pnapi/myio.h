@@ -111,7 +111,7 @@ enum MetaInformation
  */
 //@{
 /// %PetriNet input
-std::istream & operator>>(std::istream &, PetriNet &) throw (exception::InputError);
+std::istream & operator>>(std::istream &, PetriNet &) /*throw (exception::InputError)*/;
 /// %MetaInformation manipulation
 std::istream & operator>>(std::istream &,
                           const util::Manipulator<std::pair<MetaInformation, std::string> > &);
