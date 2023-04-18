@@ -435,7 +435,7 @@ void * Task::process_skeleton_subformula_havehlnet(void * a)
 		return NULL;
 	}
 
-	if((RT::args.netreduction_arg == netreduction_arg_local ||
+	if(false && (RT::args.netreduction_arg == netreduction_arg_local ||
 	   RT::args.netreduction_arg == netreduction_arg_both) &&
 	f -> containsTemporal)
 	{
