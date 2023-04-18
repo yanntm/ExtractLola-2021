@@ -100,17 +100,20 @@ void portfoliomanager::mcc_boolean(char * f, ternary_t result)
 		}
 	}
 	if(!RT::args.mcc_given) return;
+	std::stringstream ss;
 	switch(result)
 	{
 	case TERNARY_TRUE:
-		std::cout << std::endl << "FORMULA " << f << " " << " TRUE " << " " << TECHNIQUES << std::endl;
+		ss << std::endl << "FORMULA " << f << " " << " TRUE " << " " << TECHNIQUES << std::endl;
 		break;
 	case TERNARY_FALSE:
-		std::cout << std::endl << "FORMULA " << f << " " << " FALSE " << " " << TECHNIQUES << std::endl;
+		ss << std::endl << "FORMULA " << f << " " << " FALSE " << " " << TECHNIQUES << std::endl;
 		break;
 	default:
-		std::cout << std::endl << "FORMULA " << f << " " <<  " CANNOT_COMPUTE " << " " << TECHNIQUES << std::endl;
+		ss << std::endl << "FORMULA " << f << " " <<  " CANNOT_COMPUTE " << " " << TECHNIQUES << std::endl;
 	}
+	std::cout << ss.str() << std::flush;
+
 }
 
 const char * ternary2string(ternary_t);

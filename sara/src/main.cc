@@ -633,20 +633,22 @@ if (args_info.input_given || args_info.pipe_given) {
 			if (resorder[i]!="")
 			{
 				bool tech(true);
+				std::stringstream ss;
 				if (donotcompute.find(resorder[i])!=donotcompute.end())
-					{ cout << "DO_NOT_COMPETE" << endl; tech=false; }
+					{ ss << "DO_NOT_COMPETE" << endl; tech=false; }
 				else if (indecisive.find(resorder[i])==indecisive.end()) {
-					if (results[resorder[i]] ^ !orresult[resorder[i]]) cout << "FORMULA " << resorder[i] << " FALSE ";
-					else cout << "FORMULA " << resorder[i] << " TRUE ";
+					if (results[resorder[i]] ^ !orresult[resorder[i]]) ss << "FORMULA " << resorder[i] << " FALSE ";
+					else ss << "FORMULA " << resorder[i] << " TRUE ";
 				} else {
 					if (results[resorder[i]]) { 
-						cout << "CANNOT_COMPUTE" << endl;
+						ss << "CANNOT_COMPUTE" << endl;
 						tech = false;
 					} else
-						if (!orresult[resorder[i]]) cout << "FORMULA " << resorder[i] << " FALSE ";
-						else cout << "FORMULA " << resorder[i] << " TRUE ";
+						if (!orresult[resorder[i]]) ss << "FORMULA " << resorder[i] << " FALSE ";
+						else ss << "FORMULA " << resorder[i] << " TRUE ";
 				}
-				if (tech) cout << "TECHNIQUES ABSTRACTIONS PARTIAL_ORDERS OTHERS" << endl;
+				if (tech) ss << "TECHNIQUES ABSTRACTIONS PARTIAL_ORDERS OTHERS" << endl;
+				std::cout << ss.str() << std::flush;
 			}
 
 	} else { // normal output
