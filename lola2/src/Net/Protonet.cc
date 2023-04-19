@@ -2770,7 +2770,7 @@ int ProtoNet::applyRemoveRedundantTransition(bool containsnext, bool containsdea
 		}
 		while(aaa)
 		{
-			if(aaa -> pl -> visible)
+			if(aaa -> pl -> visible || RT::args.check_arg == check_arg_StableMarking)
                         {       
                                 applicable = false;
                                 break;
